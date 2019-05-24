@@ -38,10 +38,3 @@ steps:
     CODECOV_TOKEN=$(codecov) ../tests/coverage/generate_coverage.sh
   displayName: CoverageGeneration
   workingDirectory: build
-
-- task: PublishCodeCoverageResults@1
-  inputs:
-    codeCoverageTool: Cobertura
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/build/coverage.xml'
-    reportDirectory: '$(System.DefaultWorkingDirectory)/build/coverage'
-  condition: succeededOrFailed()
